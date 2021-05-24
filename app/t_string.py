@@ -1,6 +1,3 @@
-from typing import List
-
-
 class TString:
     def __init__(self, string: str, translate: callable):
         self._value = string
@@ -13,14 +10,6 @@ class TString:
     def format(self, *args, **kwargs) -> str:
         """Translates and then formats"""
         return str(self).format(*args, **kwargs)
-
-    def split(self, *args, **kwargs) -> List[str]:
-        """Translates and returns a list of strings.
-
-        :return: The list of strings.
-        :rtype: List[str]
-        """
-        return str(self).split(*args, **kwargs)
 
     def __len__(self) -> int:
         """Translates and then calls __len__"""

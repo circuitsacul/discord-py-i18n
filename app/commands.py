@@ -21,6 +21,14 @@ class Group(commands.Group):
         self._help = kwargs.pop("help", None)
         super().__init__(*args, **kwargs)
 
+    def command(self, *args, **kwargs):
+        kwargs.setdefault("cls", Command)
+        return super().command(*args, **kwargs)
+
+    def group(self, *args, **kwargs):
+        kwargs.setdefault("cls", Group)
+        return super().group(*args, **kwargs)
+
     @property
     def help(self):
         return str(self._help)
@@ -41,8 +49,10 @@ class Cog(commands.Cog):
 
 
 def command(*args, **kwargs):
-    return commands.command(*args, cls=Command, **kwargs)
+    kwargs.setdefault("cls", Command)
+    return commands.command(*args, **kwargs)
 
 
 def group(*args, **kwargs):
-    return commands.group(*args, cls=Group, **kwargs)
+    kwargs.setdefault("cls", Group)
+    return commands.group(*args, **kwargs)

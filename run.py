@@ -2,8 +2,6 @@ import os
 
 from dotenv import load_dotenv
 
-from app.bot import Bot
-
 load_dotenv()
 
 
@@ -15,6 +13,9 @@ def get_all_langs():
 
 
 def launch_bot():
+    gen_mo()
+
+    from app.bot import Bot
     bot = Bot()
     try:
         bot.run(os.getenv("TOKEN"))

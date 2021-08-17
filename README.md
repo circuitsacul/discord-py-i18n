@@ -7,4 +7,4 @@ This is the system used by [Starboard-2](https://github.com/CircuitsBots/Starboa
 
 This example supports localizing not only command responses, but command help, bot description, and cog description as well.
 
-![Example](https://cdn.tixte.com/uploads/circuit.is-from.space/kp2ydwfxr9a.png)
+![Example](https://us.tixte.net/uploads/circuit.is-from.space/kp2ydwfxr9a.png)
